@@ -46,7 +46,7 @@ const gameResult = (() => {
       (g[2] == g[4] && g[4] == g[6] && g[6] == 'X')
     ) {
       setTimeout(() => {
-        displayWinner.textContent = `Winner: ${playMode.playerOne.name}`;
+        displayWinner.textContent = `${playMode.playerOne.name} won this round!`;
       }, 100);
       gameboardSquares.forEach(square => square.style.pointerEvents = 'none');
     } else if (
@@ -60,7 +60,7 @@ const gameResult = (() => {
       (g[2] == g[4] && g[4] == g[6] && g[6] == 'O')
     ) {
       setTimeout(() => {
-        displayWinner.textContent = `Winner: ${playMode.playerTwo.name}`;
+        displayWinner.textContent = `${playMode.playerTwo.name} won this round!`;
       }, 100);
       gameboardSquares.forEach(square => square.style.pointerEvents = 'none');
     } else if (g.filter(Boolean).length == 9 && !(
@@ -73,7 +73,7 @@ const gameResult = (() => {
         (g[0] == g[4] && g[4] == g[8] && g[8]) ||
         (g[2] == g[4] && g[4] == g[6] && g[6]))) {
       setTimeout(() => {
-        displayWinner.textContent = "Tie game";
+        displayWinner.textContent = "It's a tie";
       }, 100);
       gameboardSquares.forEach(square => square.style.pointerEvents = 'none');
     };
